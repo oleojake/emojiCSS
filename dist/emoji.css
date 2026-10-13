@@ -211,7 +211,7 @@
 .✨{--ec-b:ec-shimmer calc(2.2s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:linear-gradient(110deg,currentColor 40%,#fff 50%,currentColor 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 @keyframes ec-shimmer{from{background-position:100% 0}to{background-position:-50% 0}}
 /* 🦓 stripes */
-.🦓{--ec-b:ec-stripes calc(0.8s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:repeating-linear-gradient(-45deg,#0000 0 .5em,#ffffff55 .5em 1em);background-size:1.414em 1.414em}
+.🦓{--ec-b:ec-stripes calc(0.8s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:repeating-linear-gradient(-45deg,#0000 0 .5em,#0003 .5em 1em);background-size:1.414em 1.414em}
 @keyframes ec-stripes{to{background-position:1.414em 0}}
 
 /* ── Special effects ── */

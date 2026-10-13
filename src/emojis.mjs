@@ -418,7 +418,7 @@ export const emojis = [
   {
     e: '🦓', name: 'stripes', cat: 'paint', slot: 'b', demo: 'box',
     desc: 'Moving stripes. The 2004 progress bar that never reached 100%.',
-    css: 'background-image:repeating-linear-gradient(-45deg,#0000 0 .5em,#ffffff55 .5em 1em);background-size:1.414em 1.414em',
+    css: 'background-image:repeating-linear-gradient(-45deg,#0000 0 .5em,#0003 .5em 1em);background-size:1.414em 1.414em',
     anim: anim('ec-stripes', 0.8, 'linear'),
     kf: '@keyframes ec-stripes{to{background-position:1.414em 0}}',
   },
@@ -540,7 +540,7 @@ ${s}::after{left:35%;font-size:.35em;animation-delay:calc(var(--ec-delay, 0s) + 
   },
   {
     e: '🗿', name: 'moai', cat: 'static', demo: 'box',
-    desc: 'Does absolutely nothing. Enterprise stability. Zero regressions since 2026.',
+    desc: 'Does absolutely nothing. Enterprise stability. Zero regressions since day one.',
     css: '/* 🗿 */',
   },
   {

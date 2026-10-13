@@ -63,7 +63,7 @@
   // ── Hero stage ───────────────────────────────────
   const SHOWCASE = [
     ['🔄 🌈', '<span class="sticker">🔄</span>', 'Spins and changes color. Two classes, two properties, zero conflicts.'],
-    ['🪄 🦄', 'AI-powered', 'Sparkles and a gradient: the recipe for every 2025 landing page.'],
+    ['🪄 🦄', 'AI-powered', 'Sparkles and a gradient: the recipe for every AI landing page.'],
     ['🔥 🫨', '500 Internal Server Error', 'Incident comms with the appropriate sense of urgency.'],
     ['🍮', '<span class="sticker alt">🍮</span>', 'Jelly physics applied to your architecture.'],
     ['🕶️', 'Yes, they are emojis', 'Deal with it.'],
@@ -128,15 +128,12 @@
   renderBuilder();
 
   // ── Catalog ─────────────────────────────────────────────
-  const catalog = $('#catalog'), pills = $('#filter-pills'), search = $('#search'), empty = $('#catalog-empty');
-  let activeCat = 'all';
-  pills.innerHTML = [{ id: 'all', label: 'All' }, ...categories].map((c) =>
-    `<button type="button" data-cat="${c.id}" aria-pressed="${c.id === 'all'}">${c.label}</button>`).join('');
+  const catalog = $('#catalog');
   catalog.innerHTML = categories.map((c) => `
     <section class="cat-block" data-cat="${c.id}">
       <div class="cat-head"><h3>${c.label}</h3><p>${c.blurb}</p></div>
       <div class="grid">${emojis.filter((d) => d.cat === c.id).map((d, i) => `
-        <article class="card" data-e="${d.e}" data-search="${esc((d.name + ' ' + d.desc.replace(/<[^>]+>/g, '')).toLowerCase())}">
+        <article class="card" data-e="${d.e}">
           <button class="card-demo" type="button" aria-label="Replay the ${d.name} demo">${demoEl(d, i)}</button>
           <div class="card-meta">
             <span class="kc" aria-hidden="true">${d.e}</span>
@@ -152,30 +149,6 @@
     const d = byE[demo.closest('.card').dataset.e];
     demo.innerHTML = demoEl(d, [...demo.closest('.grid').children].indexOf(demo.closest('.card')));
   });
-  function filterCatalog() {
-    const q = search.value.trim().toLowerCase();
-    let shown = 0;
-    catalog.querySelectorAll('.cat-block').forEach((block) => {
-      const catOk = activeCat === 'all' || block.dataset.cat === activeCat;
-      let inBlock = 0;
-      block.querySelectorAll('.card').forEach((card) => {
-        const ok = catOk && (!q || card.dataset.search.includes(q) || card.dataset.e.includes(q));
-        card.hidden = !ok;
-        if (ok) inBlock++;
-      });
-      block.hidden = inBlock === 0;
-      shown += inBlock;
-    });
-    empty.hidden = shown > 0;
-  }
-  pills.addEventListener('click', (ev) => {
-    const b = ev.target.closest('button');
-    if (!b) return;
-    activeCat = b.dataset.cat;
-    pills.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x === b));
-    filterCatalog();
-  });
-  search.addEventListener('input', filterCatalog);
 
   // ── Editable examples ───────────────────────────────────
   const EXAMPLES = [
@@ -220,10 +193,28 @@
       html: `<h3>Powered by <span class="🦄 🪄">AI</span></h3>
 <p class="🤖">Generating a convincing answer</p>`,
     },
+    {
+      title: 'Custom emojis: bring your own PNG',
+      note: 'Any element can wear emoji classes: an <img>, a PNG used as a background, or your own emoji class.',
+      css: `/* A PNG used as an emoji */
+.cupcake {
+  display: inline-block; width: 3rem; height: 3rem;
+  background: url(site/example-emoji.png) center / contain no-repeat;
+  image-rendering: pixelated;
+}
+
+/* Your own emoji class, with your own animation */
+.🧁 { animation: wiggle 1s ease-in-out infinite; }
+@keyframes wiggle { 50% { rotate: 14deg; } }`,
+      html: `<img src="site/example-emoji.png" width="64" height="64" alt="" class="🏀 💓">
+<span class="cupcake 🔄 🌈"></span>
+<span class="🧁">🧁</span>`,
+    },
   ];
   $('#examples').innerHTML = EXAMPLES.map((x, i) => `
     <article class="example">
-      <div class="example-head"><h3>${x.title}</h3><p>${x.note}</p></div>
+      <div class="example-head"><h3>${x.title}</h3><p>${esc(x.note)}</p></div>
+      ${x.css ? `<div class="example-css snippet"><pre class="code code-dark" tabindex="0"><code id="ex-${i}-css">${esc(x.css)}</code></pre><button class="copy" type="button" data-copy="#ex-${i}-css">Copy</button></div>` : ''}
       <div class="example-code">
         <label class="visually-hidden" for="ex-${i}">Example code: ${x.title}</label>
         <textarea id="ex-${i}" spellcheck="false" autocapitalize="off" autocomplete="off">${esc(x.html)}</textarea>

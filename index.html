@@ -6,7 +6,7 @@
 <title>EmojiCSS</title>
 <meta name="description" content="The utility-first CSS framework where every class is an emoji. class=&quot;🔄 🌈 🫨&quot; and ship it.">
 <meta property="og:title" content="EmojiCSS">
-<meta property="og:description" content="CSS classes that are emojis. 92 animations, 0 dependencies, 0 real-world use cases.">
+<meta property="og:description" content="CSS classes that are emojis. 92 animations, 0 dependencies, 100% unnecessary.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 <a class="skip" href="#catalog-section">Skip to the catalog</a>
 
 <header class="top">
-  <a class="brand" href="#" aria-label="EmojiCSS, home"><span class="kc kc-sm 🔄 🐌" aria-hidden="true">🔄</span> EmojiCSS</a>
+  <a class="brand" href="#" aria-label="EmojiCSS, home"><span class="brand-icon 🔄 🐌" aria-hidden="true">🔄</span> EmojiCSS</a>
   <nav aria-label="Sections">
     <a href="#install">Install</a>
     <a href="#builder">Builder</a>
@@ -33,8 +33,8 @@
   <!-- HERO -->
   <section class="hero wrap">
     <div class="hero-copy">
-      <p class="eyebrow">v<span data-version>1.0.0</span> · <span data-count>92</span> classes · 0 dependencies · 0 real-world use cases</p>
-      <h1 class="wordmark">Emoji<span class="kc 🎈">C</span><span class="kc 🎈 ⏳">S</span><span class="kc 🎈 ⌛">S</span></h1>
+      <p class="eyebrow">v<span data-version>1.0.0</span> · <span data-count>92</span> classes · 0 dependencies · 100% unnecessary</p>
+      <h1 class="wordmark">Emoji<span class="wordmark-css">CSS</span></h1>
       <p class="lede">The <em>utility-first</em> framework that replaces <code>animate-spin</code> with <code>🔄</code>. Because readable code was <span class="✏️ 🐢">overrated</span> anyway.</p>
       <div class="compare" aria-label="Comparison">
         <div class="compare-row"><span class="tag tag-old">Before</span><code>&lt;div class="animate-spin hover:scale-110 motion-safe:animate-bounce"&gt;</code></div>
@@ -54,35 +54,34 @@
       </div>
       <figcaption>
         <span id="stage-caption">Loading the demo…</span>
-        <button class="btn btn-sm" id="stage-next" type="button">Next ↻</button>
+        <button class="btn btn-sm" id="stage-next" type="button">Next →</button>
       </figcaption>
     </figure>
   </section>
 
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>0 dependencies</span><span>✦</span><span>Blazingly fast™ (not measured)</span><span>✦</span><span>100% test-free</span><span>✦</span><span>AI-compatible: it doesn't get it either</span><span>✦</span><span>Used in production by 0 Fortune 500 companies</span><span>✦</span><span>Approved by your linter (under protest)</span><span>✦</span><span>Respects prefers-reduced-motion, pinky promise</span><span>✦</span>
-      <span>0 dependencies</span><span>✦</span><span>Blazingly fast™ (not measured)</span><span>✦</span><span>100% test-free</span><span>✦</span><span>AI-compatible: it doesn't get it either</span><span>✦</span><span>Used in production by 0 Fortune 500 companies</span><span>✦</span><span>Approved by your linter (under protest)</span><span>✦</span><span>Respects prefers-reduced-motion, pinky promise</span><span>✦</span>
+      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Respects prefers-reduced-motion</span><span>✦</span>
+      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Respects prefers-reduced-motion</span><span>✦</span>
     </div>
   </div>
 
   <!-- HOW IT WORKS -->
   <section class="wrap section" id="how">
     <div class="section-head">
-      <h2>Three steps. The third one is the hard part.</h2>
+      <h2>How it works</h2>
     </div>
     <ol class="steps">
       <li><span class="step-n">1</span><h3>Paste a <code>&lt;link&gt;</code></h3><p>One stylesheet. No build step, no PostCSS, no 200-line config file.</p></li>
-      <li><span class="step-n">2</span><h3>Put emojis in <code>class</code></h3><p>Stack them like Tailwind utilities. <code>class="🔄 🌈"</code> spins and shifts color at the same time.</p></li>
-      <li><span class="step-n">3</span><h3>Defend it in code review</h3><p>We can't help you here. We suggest the phrase "it's a product decision".</p></li>
+      <li><span class="step-n">2</span><h3>Put an emoji in <code>class</code></h3><p>Use it like a Tailwind utility. <code>class="🔄"</code> makes the element spin.</p></li>
+      <li><span class="step-n">3</span><h3>Stack as many as you like</h3><p><code>class="🔄 🌈"</code> spins and changes color at the same time.</p></li>
     </ol>
 
     <div class="engine">
       <div class="engine-copy">
-        <p class="eyebrow">The technical bit (yes, there is one)</p>
-        <h3>Animations stack instead of overriding each other</h3>
-        <p>In regular CSS, two classes that set <code>animation</code> clobber each other. EmojiCSS gives each family its own property: <code>rotate</code>, <code>translate</code>, <code>scale</code>, <code>filter</code>… Every class fills its slot with a custom property registered via <code>@property</code> (<code>inherits: false</code>, so children don't inherit the dizziness), and a single engine composes them into an eight-layer <code>animation</code>.</p>
-        <p>On top of that, every emoji works with and without the U+FE0F variation selector, because every keyboard on Earth does whatever it wants.</p>
+        <h3>Why classes stack</h3>
+        <p>Each family of classes animates a different CSS property (<code>rotate</code>, <code>translate</code>, <code>scale</code>, <code>filter</code>…). That's why several emojis on the same element add up instead of overriding each other.</p>
+        <p>Under the hood, every class fills its own slot, a custom property, and a single rule combines all the slots into one <code>animation</code>.</p>
       </div>
       <pre class="code code-dark" tabindex="0"><code><span class="c">/* what .🔄 + .🏀 + .💓 generate */</span>
 .🔄 { --ec-r: ec-spin 1s linear infinite; }
@@ -124,7 +123,6 @@
 &lt;div class="p-4 rounded-xl 💓"&gt;…&lt;/div&gt;</code></pre><button class="copy" type="button" data-copy="#snip-use">Copy</button></div>
       </div>
     </div>
-    <p class="note">npm? Coming soon, as soon as someone remembers the account password.</p>
   </section>
 
   <!-- BUILDER -->
@@ -155,12 +153,7 @@
       <h2>Catalog</h2>
       <p><span data-count>92</span> classes grouped by the property they animate. Classes from different groups stack. Click a demo to replay it.</p>
     </div>
-    <div class="filters">
-      <div class="filter-pills" id="filter-pills" role="group" aria-label="Filter by family"></div>
-      <label class="search"><span class="visually-hidden">Search</span><input id="search" type="search" placeholder="Search: spin, fire, boss…" autocomplete="off"></label>
-    </div>
     <div id="catalog"></div>
-    <p class="empty" id="catalog-empty" hidden>Nothing here. Try another word, or open a PR with your emoji.</p>
   </section>
 
   <!-- EXAMPLES -->
@@ -193,14 +186,14 @@
       <details><summary>Why won't my &lt;span&gt; move?</summary><p>Transforms don't apply to <em>inline</em> elements. EmojiCSS already sets <code>display: inline-block</code> on <code>span</code>, <code>a</code>, <code>em</code> and friends when they carry a movement class. If you use another inline tag, add it yourself.</p></details>
       <details><summary>Is it accessible?</summary><p>We respect <code>prefers-reduced-motion</code>: if your system asks for less motion, everything stays still. It's the only serious part of the project. And please, don't animate text people actually need to read.</p></details>
       <details><summary>Is it production-ready?</summary><p>Define "production".</p></details>
-      <details><summary>How do I add my own emoji?</summary><p>Add it to <code>src/emojis.mjs</code>, run <code>npm run build</code> and open a PR. Mandatory requirement: a sarcastic description.</p></details>
+      <details><summary>Can I use my own emojis?</summary><p>Yes. Any element can wear emoji classes, including an <code>&lt;img&gt;</code> or a PNG used as a CSS background, and you can define your own emoji classes with their own animation. There's a live example under <a href="#examples-section">Real-world examples</a>. To add an emoji to the library itself, add it to <code>src/emojis.mjs</code>, run <code>npm run build</code> and open a PR.</p></details>
     </div>
   </section>
 </main>
 
 <footer class="foot wrap">
   <p class="foot-big"><span class="🦄">EmojiCSS</span></p>
-  <p>MIT License · Made with <span class="💓">💓</span> by <a href="https://github.com/oleojake">@oleojake</a> · <a href="https://github.com/oleojake/emojiCSS">Source on GitHub</a></p>
+  <p>Made with <span class="💓">💓</span> by <a href="https://github.com/oleojake">@oleojake</a> · <a href="https://github.com/oleojake/emojiCSS">Source on GitHub</a></p>
   <p class="muted">No emojis were harmed in the making of this stylesheet (except 🐛, who had it coming).</p>
 </footer>
 
