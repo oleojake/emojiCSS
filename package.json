@@ -1,0 +1,28 @@
+{
+  "name": "emojicss",
+  "version": "1.0.0",
+  "description": "The utility-first CSS framework where every class is an emoji. class=\"🔄 🌈 🫨\" and ship it.",
+  "homepage": "https://oleojake.github.io/emojiCSS/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oleojake/emojiCSS.git"
+  },
+  "license": "MIT",
+  "author": "oleojake",
+  "type": "module",
+  "main": "dist/emoji.css",
+  "style": "dist/emoji.min.css",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "css",
+    "emoji",
+    "animation",
+    "utility-first",
+    "satire"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}

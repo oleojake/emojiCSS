@@ -1,0 +1,790 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "rotate",
+      "label": "Rotation",
+      "blurb": "Animates <code>rotate</code>. For when the roadmap goes in circles."
+    },
+    {
+      "id": "move",
+      "label": "Movement",
+      "blurb": "Animates <code>translate</code>. Moves things around, like your boss moves deadlines."
+    },
+    {
+      "id": "scale",
+      "label": "Scale",
+      "blurb": "Animates <code>scale</code>. Grows like tech debt."
+    },
+    {
+      "id": "filter",
+      "label": "Filters",
+      "blurb": "Animates <code>filter</code>. Colors your designer never approved."
+    },
+    {
+      "id": "fade",
+      "label": "Opacity",
+      "blurb": "Animates <code>opacity</code>. Appears and disappears like the PM at retros."
+    },
+    {
+      "id": "warp",
+      "label": "Warp",
+      "blurb": "Animates <code>transform</code> (skew and 3D). Startup physics."
+    },
+    {
+      "id": "glow",
+      "label": "Glow & shadows",
+      "blurb": "Animates <code>text-shadow</code> and <code>box-shadow</code>. Illuminate your mediocrity."
+    },
+    {
+      "id": "paint",
+      "label": "Paint",
+      "blurb": "Animates <code>background</code>. Markers, underlines and rainbows."
+    },
+    {
+      "id": "fx",
+      "label": "Special effects",
+      "blurb": "Use <code>::before</code> and <code>::after</code>. One per element; this isn't Hollywood."
+    },
+    {
+      "id": "static",
+      "label": "Utilities",
+      "blurb": "No animation. Classes that do weird things, but stand still."
+    },
+    {
+      "id": "mod",
+      "label": "Modifiers",
+      "blurb": "Change how the other classes animate. Like Tailwind's <code>hover:</code>, but in hieroglyphics."
+    }
+  ],
+  "emojis": [
+    {
+      "e": "🔄",
+      "name": "spin",
+      "cat": "rotate",
+      "desc": "Spins forever. Like your on-call rotation on a Saturday.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🎡",
+      "name": "ferris",
+      "cat": "rotate",
+      "desc": "Slow, contemplative rotation. Perfect for 40-second loading screens.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🙃",
+      "name": "flip",
+      "cat": "rotate",
+      "desc": "Turns upside down, has second thoughts, comes back. Just like the last refactor.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🕺",
+      "name": "dance",
+      "cat": "rotate",
+      "desc": "Dances side to side. No rhythm, plenty of attitude.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🔔",
+      "name": "ring",
+      "cat": "rotate",
+      "desc": "Rings like a Slack notification at 11:58 PM.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🥴",
+      "name": "wobble",
+      "cat": "rotate",
+      "desc": "Friday after-work wobble. Not suitable for client demos.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🧭",
+      "name": "compass",
+      "cat": "rotate",
+      "desc": "Searches for north, like your product strategy. Doesn't find it either.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🌀",
+      "name": "vortex",
+      "cat": "rotate",
+      "desc": "Gets sucked into a whirlpool and comes back. Like your time in meetings.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🪃",
+      "name": "boomerang",
+      "cat": "rotate",
+      "desc": "Flies off spinning and comes right back. Like that bug you closed as \"won't fix\".",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "⏰",
+      "name": "alarm",
+      "cat": "rotate",
+      "desc": "Rattles in bursts. The sprint ends tomorrow.",
+      "demo": "box",
+      "slot": "r"
+    },
+    {
+      "e": "🏀",
+      "name": "bounce",
+      "cat": "move",
+      "desc": "Bounces. The classic every framework ships and nobody needs.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🎈",
+      "name": "float",
+      "cat": "move",
+      "desc": "Floats gently. Like your Monday motivation, but upwards.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🫨",
+      "name": "shake",
+      "cat": "move",
+      "desc": "Trembles. Perfect for the \"Drop production database\" button.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🦘",
+      "name": "jump",
+      "cat": "move",
+      "desc": "Jumps, rests, jumps. Like someone who switches jobs every 11 months.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🥶",
+      "name": "shiver",
+      "cat": "move",
+      "desc": "Shivers. Someone set the office AC to 62 °F.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🛸",
+      "name": "ufo",
+      "cat": "move",
+      "desc": "Flies in a figure eight. Undocumented behavior, just like your API.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🐍",
+      "name": "slither",
+      "cat": "move",
+      "desc": "Slips from side to side. Like accountability in a post-mortem.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🚀",
+      "name": "launch",
+      "cat": "move",
+      "desc": "Takes off and comes back. Blazingly fast™, written in Rust (not really).",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "📈",
+      "name": "stonks",
+      "cat": "move",
+      "desc": "Only goes up. Use it on the investor slide and nowhere else.",
+      "demo": "word",
+      "text": "+340% ARR",
+      "slot": "t"
+    },
+    {
+      "e": "📉",
+      "name": "crash",
+      "cat": "move",
+      "desc": "Plummets while spinning. Your crypto portfolio, now in CSS.",
+      "demo": "word",
+      "text": "my portfolio",
+      "slot": "t"
+    },
+    {
+      "e": "🪂",
+      "name": "parachute",
+      "cat": "move",
+      "desc": "Drops in from above, swaying. Like the new VP fresh out of consulting.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🏓",
+      "name": "pingpong",
+      "cat": "move",
+      "desc": "Back and forth. Like a ticket between backend and frontend.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🧲",
+      "name": "magnet",
+      "cat": "move",
+      "desc": "Gets pulled to the right and snaps back. Like you when there's pizza in the kitchen.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "🪀",
+      "name": "yoyo",
+      "cat": "move",
+      "desc": "Drops fast, climbs slowly. A junior's self-esteem during code review.",
+      "demo": "box",
+      "slot": "t"
+    },
+    {
+      "e": "💓",
+      "name": "heartbeat",
+      "cat": "scale",
+      "desc": "Beats. Makes your CTA convert 300% better (source: I made it up).",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🫁",
+      "name": "breathe",
+      "cat": "scale",
+      "desc": "Takes a deep breath. Use it on the \"Deploy to production\" button.",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🍮",
+      "name": "jelly",
+      "cat": "scale",
+      "desc": "Wobbles like jelly. Just like the microservices architecture you built in 2019.",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "💥",
+      "name": "pop",
+      "cat": "scale",
+      "desc": "Pops in with a bounce. Only once, because it gets old.",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🐡",
+      "name": "puff",
+      "cat": "scale",
+      "desc": "Puffs up and deflates. Like your ego after a founder likes your LinkedIn post.",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🤏",
+      "name": "shrink",
+      "cat": "scale",
+      "desc": "Shrinks. Like your training budget.",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🔍",
+      "name": "zoom",
+      "cat": "scale",
+      "desc": "Zooms in. For reviewing that 4,000-line PR \"carefully\".",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🫠",
+      "name": "melt",
+      "cat": "scale",
+      "desc": "Melts. You at the 9 AM standup after a late-night hotfix.",
+      "demo": "box",
+      "slot": "s"
+    },
+    {
+      "e": "🌈",
+      "name": "rainbow",
+      "cat": "filter",
+      "desc": "Cycles through every color. For when the brand guidelines are a \"suggestion\".",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "💡",
+      "name": "glow",
+      "cat": "filter",
+      "desc": "Glows with its own light. Unlike your idea in the brainstorm.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "😵‍💫",
+      "name": "dizzy",
+      "cat": "filter",
+      "desc": "Blurs and refocuses. A 3-code-point ZWJ sequence as a CSS class, because we can.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "🔦",
+      "name": "flicker",
+      "cat": "filter",
+      "desc": "Flickers like the fluorescent tube in the server room.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "🌚",
+      "name": "invert",
+      "cat": "filter",
+      "desc": "Dark mode, implemented by an intern in 5 minutes.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "☢️",
+      "name": "radioactive",
+      "cat": "filter",
+      "desc": "Toxic green glow. Mark the module nobody dares to touch.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "🌫️",
+      "name": "fog",
+      "cat": "filter",
+      "desc": "Fades in and out of the fog. Like the project requirements.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "🧪",
+      "name": "trip",
+      "cat": "filter",
+      "desc": "Experimental saturation. A feature flag enabled in production \"just to test\".",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "📸",
+      "name": "flash",
+      "cat": "filter",
+      "desc": "Camera flash. For the dashboard screenshot right when everything is green.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "🥵",
+      "name": "heat",
+      "cat": "filter",
+      "desc": "Overheats. Like your laptop running Slack, Teams, Chrome and Docker at once.",
+      "demo": "box",
+      "slot": "f"
+    },
+    {
+      "e": "🪦",
+      "name": "blink",
+      "cat": "fade",
+      "desc": "Brings back the <code>&lt;blink&gt;</code> tag. Rest in peace (1995–2013).",
+      "demo": "word",
+      "text": "SALE!",
+      "slot": "o"
+    },
+    {
+      "e": "👻",
+      "name": "ghost",
+      "cat": "fade",
+      "desc": "Floats and turns see-through. Like the client after signing.",
+      "demo": "box",
+      "slot": "o"
+    },
+    {
+      "e": "🫥",
+      "name": "vanish",
+      "cat": "fade",
+      "desc": "Slowly disappears. Your camera during a two-hour meeting.",
+      "demo": "box",
+      "slot": "o"
+    },
+    {
+      "e": "🕯️",
+      "name": "candle",
+      "cat": "fade",
+      "desc": "Flickers like a candle. Romantic ambience for your login screen.",
+      "demo": "box",
+      "slot": "o"
+    },
+    {
+      "e": "👾",
+      "name": "glitch",
+      "cat": "warp",
+      "desc": "Glitch with chromatic aberration. Cyberpunk aesthetics, intern budget.",
+      "demo": "word",
+      "text": "ERROR 418",
+      "slot": "k"
+    },
+    {
+      "e": "🌊",
+      "name": "wave",
+      "cat": "warp",
+      "desc": "Waves like a flag. Or like your tolerance for scope changes.",
+      "demo": "box",
+      "slot": "k"
+    },
+    {
+      "e": "🍝",
+      "name": "spaghetti",
+      "cat": "warp",
+      "desc": "Twists with no apparent logic. A faithful portrait of your legacy code.",
+      "demo": "box",
+      "slot": "k"
+    },
+    {
+      "e": "🪙",
+      "name": "coin",
+      "cat": "warp",
+      "desc": "Spins in 3D like a coin. Heads: Kubernetes. Tails: also Kubernetes.",
+      "demo": "box",
+      "slot": "k"
+    },
+    {
+      "e": "🥞",
+      "name": "pancake",
+      "cat": "warp",
+      "desc": "Flips backwards like a pancake. Sunday brunch and deploys.",
+      "demo": "box",
+      "slot": "k"
+    },
+    {
+      "e": "🔥",
+      "name": "fire",
+      "cat": "glow",
+      "desc": "The text is on fire. Recommended for production error messages.",
+      "demo": "word",
+      "text": "in production",
+      "slot": "x"
+    },
+    {
+      "e": "🚨",
+      "name": "siren",
+      "cat": "glow",
+      "desc": "Police lights. For your favorite \"P0 incident\" badge.",
+      "demo": "box",
+      "slot": "x"
+    },
+    {
+      "e": "🪩",
+      "name": "disco",
+      "cat": "glow",
+      "desc": "Full-color disco glow. Your MVP launch party.",
+      "demo": "box",
+      "slot": "x"
+    },
+    {
+      "e": "📟",
+      "name": "terminal",
+      "cat": "glow",
+      "desc": "Phosphor green with CRT glow. Either you're hacking the Pentagon or tweaking some CSS.",
+      "demo": "word",
+      "text": "root@prod:~#",
+      "slot": "x"
+    },
+    {
+      "e": "⚡",
+      "name": "electric",
+      "cat": "glow",
+      "desc": "Electric discharges. \"Deployed it without tests\" vibes.",
+      "demo": "word",
+      "text": "high voltage",
+      "slot": "x"
+    },
+    {
+      "e": "✏️",
+      "name": "underline",
+      "cat": "paint",
+      "desc": "Draws a pencil underline. Like the college notes you never reread.",
+      "demo": "word",
+      "text": "important",
+      "slot": "b"
+    },
+    {
+      "e": "🖍️",
+      "name": "highlight",
+      "cat": "paint",
+      "desc": "Sweeps a highlighter. Ideal for the parts of the docs nobody will read.",
+      "demo": "word",
+      "text": "tech debt",
+      "slot": "b"
+    },
+    {
+      "e": "🦄",
+      "name": "unicorn",
+      "cat": "paint",
+      "desc": "Moving rainbow gradient text. Valuation: $1B. Revenue: $0.",
+      "demo": "word",
+      "text": "Unicorn",
+      "slot": "b"
+    },
+    {
+      "e": "✨",
+      "name": "shimmer",
+      "cat": "paint",
+      "desc": "A shine sweeps across the text. Makes anything look like a paid plan.",
+      "demo": "word",
+      "text": "Premium",
+      "slot": "b"
+    },
+    {
+      "e": "🦓",
+      "name": "stripes",
+      "cat": "paint",
+      "desc": "Moving stripes. The 2004 progress bar that never reached 100%.",
+      "demo": "box",
+      "slot": "b"
+    },
+    {
+      "e": "🪄",
+      "name": "sparkles",
+      "cat": "fx",
+      "desc": "Sheds sparkles all around. For \"AI-powered\" features that are just an <code>if</code>.",
+      "demo": "word",
+      "text": "magic"
+    },
+    {
+      "e": "🎉",
+      "name": "confetti",
+      "cat": "fx",
+      "desc": "A burst of confetti. Celebrate the pipeline passing on the third try.",
+      "demo": "button",
+      "text": "Deploy OK!"
+    },
+    {
+      "e": "❤️",
+      "name": "hearts",
+      "cat": "fx",
+      "desc": "Releases floating hearts. Artificial engagement, Instagram Live style.",
+      "demo": "word",
+      "text": "liked"
+    },
+    {
+      "e": "💸",
+      "name": "money",
+      "cat": "fx",
+      "desc": "It's raining money. Exactly like the funding round of your dreams.",
+      "demo": "word",
+      "text": "Series A"
+    },
+    {
+      "e": "❄️",
+      "name": "snow",
+      "cat": "fx",
+      "desc": "Snows inside the element. The holiday code freeze, visualized.",
+      "demo": "box"
+    },
+    {
+      "e": "☕",
+      "name": "steam",
+      "cat": "fx",
+      "desc": "Lets off steam. Freshly baked code: no tests, but nice and warm.",
+      "demo": "word",
+      "text": "fresh out"
+    },
+    {
+      "e": "🤖",
+      "name": "typing",
+      "cat": "fx",
+      "desc": "Adds a blinking cursor. Makes it look like an AI wrote it (and maybe one did).",
+      "demo": "word",
+      "text": "Generating answer"
+    },
+    {
+      "e": "🕶️",
+      "name": "dealwithit",
+      "cat": "fx",
+      "desc": "Sunglasses drop on top. Deal with it. Only once, out of respect.",
+      "demo": "word",
+      "text": "Yes, they're emojis"
+    },
+    {
+      "e": "💯",
+      "name": "stamp",
+      "cat": "fx",
+      "desc": "Stamps a 💯 in the corner. Approved without reading, as tradition demands.",
+      "demo": "word",
+      "text": "Code review"
+    },
+    {
+      "e": "💤",
+      "name": "sleep",
+      "cat": "fx",
+      "desc": "Floats out Z's. For any meeting that could have been an email.",
+      "demo": "word",
+      "text": "2-hour meeting"
+    },
+    {
+      "e": "🫧",
+      "name": "bubbles",
+      "cat": "fx",
+      "desc": "Bubbles rising. Just like AI startup valuations.",
+      "demo": "box"
+    },
+    {
+      "e": "🤡",
+      "name": "comic",
+      "cat": "static",
+      "desc": "Comic Sans. The only typeface that takes this library as seriously as you do.",
+      "demo": "word",
+      "text": "Corporate design"
+    },
+    {
+      "e": "📢",
+      "name": "shout",
+      "cat": "static",
+      "desc": "UPPERCASE AND BOLD. FOR COMMUNICATING LIKE IN #GENERAL.",
+      "demo": "word",
+      "text": "urgent"
+    },
+    {
+      "e": "🙈",
+      "name": "spoiler",
+      "cat": "static",
+      "desc": "Blurred until you hover. Sensitive information, Post-it-level security.",
+      "demo": "word",
+      "text": "the CEO's salary"
+    },
+    {
+      "e": "🧊",
+      "name": "frozen",
+      "cat": "static",
+      "desc": "Freezes every animation and gives it an icy tint. Official code freeze.",
+      "demo": "box"
+    },
+    {
+      "e": "🐛",
+      "name": "bug",
+      "cat": "static",
+      "desc": "Shifts the element 1px to the right. Nobody will ever know why.",
+      "demo": "box"
+    },
+    {
+      "e": "🗿",
+      "name": "moai",
+      "cat": "static",
+      "desc": "Does absolutely nothing. Enterprise stability. Zero regressions since 2026.",
+      "demo": "box"
+    },
+    {
+      "e": "🧼",
+      "name": "reset",
+      "cat": "static",
+      "desc": "Washes the element: removes every EmojiCSS animation. For when Legal shows up.",
+      "demo": "box"
+    },
+    {
+      "e": "🐌",
+      "name": "speed-x4",
+      "cat": "mod",
+      "desc": "Four times slower. The speed of an architecture committee.",
+      "demo": "box"
+    },
+    {
+      "e": "🐢",
+      "name": "speed-x2",
+      "cat": "mod",
+      "desc": "Twice as slow. Like your CI pipeline.",
+      "demo": "box"
+    },
+    {
+      "e": "🐇",
+      "name": "speed-half",
+      "cat": "mod",
+      "desc": "Twice as fast. Like a PM promising dates.",
+      "demo": "box"
+    },
+    {
+      "e": "🏎️",
+      "name": "speed-quarter",
+      "cat": "mod",
+      "desc": "Four times faster. Helmet recommended.",
+      "demo": "box"
+    },
+    {
+      "e": "1️⃣",
+      "name": "once",
+      "cat": "mod",
+      "desc": "Plays once. Like your last raise.",
+      "demo": "box"
+    },
+    {
+      "e": "3️⃣",
+      "name": "thrice",
+      "cat": "mod",
+      "desc": "Three times, then stops. About as long as a good intention lasts.",
+      "demo": "box"
+    },
+    {
+      "e": "♾️",
+      "name": "infinite",
+      "cat": "mod",
+      "desc": "Repeats forever. Like the tabs vs. spaces debate.",
+      "demo": "box"
+    },
+    {
+      "e": "⏪",
+      "name": "reverse",
+      "cat": "mod",
+      "desc": "Plays backwards. Ctrl+Z as an animation.",
+      "demo": "box"
+    },
+    {
+      "e": "🔁",
+      "name": "alternate",
+      "cat": "mod",
+      "desc": "There and back again. Like the requirements.",
+      "demo": "box"
+    },
+    {
+      "e": "⏳",
+      "name": "delay",
+      "cat": "mod",
+      "desc": "Waits half a second before starting. Like the loader you added \"so people notice\".",
+      "demo": "box"
+    },
+    {
+      "e": "⌛",
+      "name": "delay-long",
+      "cat": "mod",
+      "desc": "Waits 1.5 seconds. To build anticipation (or patience).",
+      "demo": "box"
+    },
+    {
+      "e": "⏸️",
+      "name": "paused",
+      "cat": "mod",
+      "desc": "Pauses the animation. Very useful for doing nothing in style.",
+      "demo": "box"
+    },
+    {
+      "e": "👆",
+      "name": "hover",
+      "cat": "mod",
+      "desc": "Only animates on hover. Tailwind's <code>hover:</code> for people with self-control.",
+      "demo": "box"
+    }
+  ]
+}

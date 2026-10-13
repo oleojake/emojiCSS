@@ -1,0 +1,331 @@
+/*! EmojiCSS v1.0.0 | MIT | https://oleojake.github.io/emojiCSS/
+ *  The utility-first CSS framework nobody asked for. 92 classes, 0 dependencies.
+ */
+
+/* ── Animation slots: each family animates a different property, so they stack ── */
+@property --ec-r{syntax:"*";inherits:false}
+@property --ec-t{syntax:"*";inherits:false}
+@property --ec-s{syntax:"*";inherits:false}
+@property --ec-f{syntax:"*";inherits:false}
+@property --ec-o{syntax:"*";inherits:false}
+@property --ec-k{syntax:"*";inherits:false}
+@property --ec-x{syntax:"*";inherits:false}
+@property --ec-b{syntax:"*";inherits:false}
+
+/* ── Composition engine ── */
+.🔄,.🎡,.🙃,.🕺,.🔔,.🥴,.🧭,.🌀,.🪃,.⏰,.🏀,.🎈,.🫨,.🦘,.🥶,.🛸,.🐍,.🚀,.📈,.📉,.🪂,.🏓,.🧲,.🪀,.💓,.🫁,.🍮,.💥,.🐡,.🤏,.🔍,.🫠,.🌈,.💡,.😵‍💫,.🔦,.🌚,.☢️,.☢,.🌫️,.🌫,.🧪,.📸,.🥵,.🪦,.👻,.🫥,.🕯️,.🕯,.👾,.🌊,.🍝,.🪙,.🥞,.🔥,.🚨,.🪩,.📟,.⚡,.✏️,.✏,.🖍️,.🖍,.🦄,.✨,.🦓{animation:var(--ec-r, none), var(--ec-t, none), var(--ec-s, none), var(--ec-f, none), var(--ec-o, none), var(--ec-k, none), var(--ec-x, none), var(--ec-b, none)}
+:where(.🔄,.🎡,.🙃,.🕺,.🔔,.🥴,.🧭,.🌀,.🪃,.⏰,.🏀,.🎈,.🫨,.🦘,.🥶,.🛸,.🐍,.🚀,.📈,.📉,.🪂,.🏓,.🧲,.🪀,.💓,.🫁,.🍮,.💥,.🐡,.🤏,.🔍,.🫠,.🪦,.👻,.🫥,.🕯️,.🕯,.👾,.🌊,.🍝,.🪙,.🥞):where(span,a,em,strong,b,i,u,s,small,mark,code,kbd,label,abbr,q,sup,sub,img,time){display:inline-block}
+
+/* ── Rotation ── */
+/* 🔄 spin */
+.🔄{--ec-r:ec-spin calc(1s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-spin{to{rotate:360deg}}
+/* 🎡 ferris */
+.🎡{--ec-r:ec-spin calc(6s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+/* 🙃 flip */
+.🙃{--ec-r:ec-flip calc(2.4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-flip{0%,15%{rotate:0deg}40%,65%{rotate:180deg}90%,100%{rotate:360deg}}
+/* 🕺 dance */
+.🕺{--ec-r:ec-dance calc(0.5s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-dance{from{rotate:-14deg}to{rotate:14deg}}
+/* 🔔 ring */
+.🔔{--ec-r:ec-ring calc(1.6s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;transform-origin:50% 0}
+@keyframes ec-ring{0%,60%,100%{rotate:0deg}6%{rotate:22deg}12%{rotate:-20deg}18%{rotate:16deg}24%{rotate:-12deg}30%{rotate:8deg}36%{rotate:-5deg}42%{rotate:2deg}}
+/* 🥴 wobble */
+.🥴{--ec-r:ec-wobble calc(1.8s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-wobble{0%,100%{rotate:0deg}20%{rotate:-9deg}35%{rotate:6deg}55%{rotate:-4deg}70%{rotate:8deg}85%{rotate:-2deg}}
+/* 🧭 compass */
+.🧭{--ec-r:ec-compass calc(2.2s * var(--ec-speed, 1)) cubic-bezier(.5,1.8,.5,.8) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-compass{0%,100%{rotate:-40deg}50%{rotate:35deg}}
+/* 🌀 vortex */
+.🌀{--ec-r:ec-vortex calc(2.4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-vortex{0%,100%{rotate:0deg;scale:1}50%{rotate:720deg;scale:.2}}
+/* 🪃 boomerang */
+.🪃{--ec-r:ec-boomerang calc(2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-boomerang{0%,100%{rotate:0deg;translate:0 0}50%{rotate:1080deg;translate:2.5em -.6em}}
+/* ⏰ alarm */
+.⏰{--ec-r:ec-alarm calc(1.2s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-alarm{0%,50%,100%{rotate:0deg}5%,15%,25%,35%,45%{rotate:-8deg}10%,20%,30%,40%{rotate:8deg}}
+
+/* ── Movement ── */
+/* 🏀 bounce */
+.🏀{--ec-t:ec-bounce calc(0.9s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-bounce{0%,100%{translate:0 0;animation-timing-function:cubic-bezier(.3,0,.6,1)}50%{translate:0 -.9em;animation-timing-function:cubic-bezier(.3,0,.6,1)}}
+/* 🎈 float */
+.🎈{--ec-t:ec-float calc(3s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-float{0%,100%{translate:0 0}50%{translate:0 -.5em}}
+/* 🫨 shake */
+.🫨{--ec-t:ec-shake calc(0.45s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-shake{0%,100%{translate:0 0}20%{translate:-.12em .06em}40%{translate:.12em -.06em}60%{translate:-.08em -.06em}80%{translate:.08em .06em}}
+/* 🦘 jump */
+.🦘{--ec-t:ec-jump calc(1.4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-jump{0%,40%,100%{translate:0 0}20%{translate:0 -1.4em}30%{translate:0 0}35%{translate:0 -.25em}}
+/* 🥶 shiver */
+.🥶{--ec-t:ec-shiver calc(0.12s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-shiver{0%,100%{translate:0 0}50%{translate:.05em 0}}
+/* 🛸 ufo */
+.🛸{--ec-t:ec-ufo calc(3.2s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-ufo{0%,100%{translate:0 0}25%{translate:.6em -.35em}50%{translate:0 0}75%{translate:-.6em -.35em}}
+/* 🐍 slither */
+.🐍{--ec-t:ec-slither calc(1.6s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-slither{0%{translate:-.6em 0}25%{translate:-.3em -.15em}50%{translate:0 0}75%{translate:.3em .15em}100%{translate:.6em 0}}
+/* 🚀 launch */
+.🚀{--ec-t:ec-launch calc(2.2s * var(--ec-speed, 1)) ease-in var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-launch{0%{translate:0 0;opacity:1}15%,25%{translate:.04em .04em}20%{translate:-.04em 0}60%{translate:0 -3em;opacity:0}61%{translate:0 2em;opacity:0}100%{translate:0 0;opacity:1}}
+/* 📈 stonks */
+.📈{--ec-t:ec-stonks calc(2.4s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-stonks{0%{translate:-.3em .5em;opacity:.4}70%,100%{translate:.3em -.5em;opacity:1}}
+/* 📉 crash */
+.📉{--ec-t:ec-crash calc(2.4s * var(--ec-speed, 1)) ease-in var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-crash{0%,20%{translate:0 0;rotate:0deg;opacity:1}90%{translate:.4em 1.2em;rotate:25deg;opacity:0}100%{translate:0 0;rotate:0deg;opacity:0}}
+/* 🪂 parachute */
+.🪂{--ec-t:ec-parachute calc(2.2s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, 1) var(--ec-dir, normal) both}
+@keyframes ec-parachute{0%{translate:0 -3em;rotate:-12deg;opacity:0}30%{opacity:1}45%{rotate:10deg}70%{rotate:-5deg}100%{translate:0 0;rotate:0deg;opacity:1}}
+/* 🏓 pingpong */
+.🏓{--ec-t:ec-pingpong calc(0.8s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-pingpong{from{translate:-1em 0}to{translate:1em 0}}
+/* 🧲 magnet */
+.🧲{--ec-t:ec-magnet calc(1.6s * var(--ec-speed, 1)) ease-in var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-magnet{0%{translate:0 0}70%{translate:1em 0}72%{translate:1.1em 0}100%{translate:0 0;animation-timing-function:ease-out}}
+/* 🪀 yoyo */
+.🪀{--ec-t:ec-yoyo calc(1.2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-yoyo{0%,100%{translate:0 0;animation-timing-function:ease-in}35%{translate:0 1em;animation-timing-function:ease-out}}
+
+/* ── Scale ── */
+/* 💓 heartbeat */
+.💓{--ec-s:ec-heartbeat calc(1.2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-heartbeat{0%,40%,100%{scale:1}10%,30%{scale:1.2}20%{scale:1.05}}
+/* 🫁 breathe */
+.🫁{--ec-s:ec-breathe calc(4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-breathe{0%,100%{scale:1}50%{scale:1.1}}
+/* 🍮 jelly */
+.🍮{--ec-s:ec-jelly calc(1s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-jelly{0%,100%{scale:1 1}30%{scale:1.25 .75}40%{scale:.75 1.25}50%{scale:1.15 .85}65%{scale:.95 1.05}75%{scale:1.05 .95}}
+/* 💥 pop */
+.💥{--ec-s:ec-pop calc(0.6s * var(--ec-speed, 1)) cubic-bezier(.3,1.6,.5,1) var(--ec-delay, 0s) var(--ec-iter, 1) var(--ec-dir, normal) both}
+@keyframes ec-pop{from{scale:0}to{scale:1}}
+/* 🐡 puff */
+.🐡{--ec-s:ec-puff calc(2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-puff{0%,100%{scale:1}40%,60%{scale:1.6}}
+/* 🤏 shrink */
+.🤏{--ec-s:ec-shrink calc(1.2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-shrink{from{scale:1}to{scale:.6}}
+/* 🔍 zoom */
+.🔍{--ec-s:ec-zoom calc(1.5s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-zoom{from{scale:1}to{scale:1.45}}
+/* 🫠 melt */
+.🫠{--ec-s:ec-melt calc(3s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;transform-origin:50% 100%}
+@keyframes ec-melt{0%,15%,100%{scale:1 1}50%,65%{scale:1.3 .45}}
+
+/* ── Filters ── */
+/* 🌈 rainbow */
+.🌈{--ec-f:ec-hue calc(3s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-hue{to{filter:hue-rotate(360deg)}}
+/* 💡 glow */
+.💡{--ec-f:ec-glow calc(1.6s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-glow{0%,100%{filter:drop-shadow(0 0 0 #ffd23f)}50%{filter:drop-shadow(0 0 .5em #ffd23f) brightness(1.2)}}
+/* 😵‍💫 dizzy */
+.😵‍💫{--ec-f:ec-dizzy calc(2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-dizzy{0%,100%{filter:blur(0)}50%{filter:blur(.12em)}}
+/* 🔦 flicker */
+.🔦{--ec-f:ec-flicker calc(2.5s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-flicker{0%,18%,22%,25%,53%,57%,100%{filter:brightness(1)}20%,24%,55%{filter:brightness(.3)}}
+/* 🌚 invert */
+.🌚{--ec-f:ec-invert calc(2s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-invert{0%{filter:invert(0)}50%{filter:invert(1)}}
+/* ☢️ radioactive */
+.☢️,.☢{--ec-f:ec-radio calc(1.4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-radio{0%,100%{filter:drop-shadow(0 0 .1em #7dff3c)}50%{filter:drop-shadow(0 0 .6em #7dff3c) saturate(2)}}
+/* 🌫️ fog */
+.🌫️,.🌫{--ec-f:ec-fog calc(4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-fog{0%,100%{filter:blur(0);opacity:1}50%{filter:blur(.25em);opacity:.35}}
+/* 🧪 trip */
+.🧪{--ec-f:ec-trip calc(2.4s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-trip{0%,100%{filter:saturate(1) contrast(1) hue-rotate(0)}50%{filter:saturate(4) contrast(1.4) hue-rotate(160deg)}}
+/* 📸 flash */
+.📸{--ec-f:ec-flash calc(2.5s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-flash{0%,8%,100%{filter:brightness(1)}3%{filter:brightness(3)}}
+/* 🥵 heat */
+.🥵{--ec-f:ec-heat calc(1.6s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-heat{0%,100%{filter:saturate(1)}50%{filter:saturate(2.5) sepia(.5) hue-rotate(-20deg) drop-shadow(0 0 .3em #ff5a1f)}}
+
+/* ── Opacity ── */
+/* 🪦 blink */
+.🪦{--ec-o:ec-blink calc(1s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-blink{50%{opacity:0}}
+/* 👻 ghost */
+.👻{--ec-o:ec-ghost calc(3s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-ghost{0%,100%{opacity:1;translate:0 0}50%{opacity:.15;translate:0 -.4em}}
+/* 🫥 vanish */
+.🫥{--ec-o:ec-vanish calc(3s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-vanish{from{opacity:1}to{opacity:0}}
+/* 🕯️ candle */
+.🕯️,.🕯{--ec-o:ec-candle calc(1.8s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-candle{0%,100%{opacity:1}15%{opacity:.75}30%{opacity:.95}45%{opacity:.6}60%{opacity:.9}80%{opacity:.7}}
+
+/* ── Warp ── */
+/* 👾 glitch */
+.👾{--ec-k:ec-glitch calc(1.8s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-glitch{0%,12%,40%,100%{transform:none;text-shadow:none}2%{transform:translate(.06em,-.04em) skewX(-12deg);text-shadow:-.06em 0 #ff2bd6,.06em 0 #00e5ff}5%{transform:translate(-.08em,.03em) skewX(8deg);text-shadow:.07em 0 #ff2bd6,-.07em 0 #00e5ff}9%{transform:translate(.03em,.02em);text-shadow:-.04em 0 #00e5ff}36%{transform:skewX(20deg);text-shadow:.05em 0 #ff2bd6}}
+/* 🌊 wave */
+.🌊{--ec-k:ec-wave calc(1.6s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-wave{0%,100%{transform:skew(0deg,0deg)}25%{transform:skew(-10deg,3deg)}75%{transform:skew(10deg,-3deg)}}
+/* 🍝 spaghetti */
+.🍝{--ec-k:ec-spaghetti calc(1.2s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-spaghetti{0%,100%{transform:skew(0,0)}20%{transform:skew(18deg,-6deg)}40%{transform:skew(-14deg,10deg)}60%{transform:skew(8deg,-12deg)}80%{transform:skew(-6deg,4deg)}}
+/* 🪙 coin */
+.🪙{--ec-k:ec-coin calc(1.6s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-coin{from{transform:perspective(20em) rotateY(0)}to{transform:perspective(20em) rotateY(360deg)}}
+/* 🥞 pancake */
+.🥞{--ec-k:ec-pancake calc(2s * var(--ec-speed, 1)) cubic-bezier(.6,0,.4,1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-pancake{0%,20%{transform:perspective(20em) rotateX(0)}80%,100%{transform:perspective(20em) rotateX(360deg)}}
+
+/* ── Glow & shadows ── */
+/* 🔥 fire */
+.🔥{--ec-x:ec-fire calc(0.9s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both}
+@keyframes ec-fire{0%{text-shadow:0 0 .1em #fff3b0,0 -.1em .2em #ffb000,.05em -.25em .35em #ff5a00,-.05em -.4em .5em #e01b00}100%{text-shadow:0 0 .12em #fff3b0,.04em -.15em .25em #ffc400,-.06em -.3em .4em #ff6a00,.06em -.55em .6em #c41500}}
+/* 🚨 siren */
+.🚨{--ec-x:ec-siren calc(0.8s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-siren{0%{box-shadow:-.4em 0 1em #ff1f3d,.4em 0 1em transparent}50%{box-shadow:-.4em 0 1em transparent,.4em 0 1em #1f6bff}}
+/* 🪩 disco */
+.🪩{--ec-x:ec-disco calc(1.6s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-disco{0%,100%{box-shadow:0 0 .8em .1em #ff2bd6}25%{box-shadow:0 0 .8em .1em #ffd23f}50%{box-shadow:0 0 .8em .1em #00e5ff}75%{box-shadow:0 0 .8em .1em #7dff3c}}
+/* 📟 terminal */
+.📟{--ec-x:ec-crt calc(0.15s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, alternate) both;color:#39ff7a;font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+@keyframes ec-crt{from{text-shadow:0 0 .2em #39ff7a99}to{text-shadow:0 0 .35em #39ff7acc}}
+/* ⚡ electric */
+.⚡{--ec-x:ec-electric calc(1.4s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-electric{0%,30%,36%,70%,100%{text-shadow:none}31%,35%,71%{text-shadow:0 0 .15em #fff,0 0 .4em #00e5ff,0 0 .8em #00e5ff}33%,73%{text-shadow:0 0 .2em #fff,0 0 .6em #b388ff}}
+
+/* ── Paint ── */
+/* ✏️ underline */
+.✏️,.✏{--ec-b:ec-underline calc(1.6s * var(--ec-speed, 1)) cubic-bezier(.7,0,.3,1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0 .1em;padding-bottom:.08em}
+@keyframes ec-underline{0%{background-size:0 .1em;background-position:0 100%}45%,55%{background-size:100% .1em;background-position:0 100%}56%{background-position:100% 100%}100%{background-size:0 .1em;background-position:100% 100%}}
+/* 🖍️ highlight */
+.🖍️,.🖍{--ec-b:ec-highlight calc(1.2s * var(--ec-speed, 1)) cubic-bezier(.6,0,.4,1) var(--ec-delay, 0s) var(--ec-iter, 1) var(--ec-dir, normal) both;background-image:linear-gradient(104deg,transparent .2em,#ffd23fcc .3em,#ffd23f 95%,transparent);background-repeat:no-repeat;background-size:0 70%;background-position:0 70%;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@keyframes ec-highlight{to{background-size:100% 70%}}
+/* 🦄 unicorn */
+.🦄{--ec-b:ec-unicorn calc(3s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:linear-gradient(90deg,#ff2bd6,#ffd23f,#39ff7a,#00e5ff,#7a5cff,#ff2bd6);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+@keyframes ec-unicorn{to{background-position:-200% 0}}
+/* ✨ shimmer */
+.✨{--ec-b:ec-shimmer calc(2.2s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:linear-gradient(110deg,currentColor 40%,#fff 50%,currentColor 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+@keyframes ec-shimmer{from{background-position:100% 0}to{background-position:-50% 0}}
+/* 🦓 stripes */
+.🦓{--ec-b:ec-stripes calc(0.8s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both;background-image:repeating-linear-gradient(-45deg,#0000 0 .5em,#ffffff55 .5em 1em);background-size:1.414em 1.414em}
+@keyframes ec-stripes{to{background-position:1.414em 0}}
+
+/* ── Special effects ── */
+/* 🪄 sparkles */
+.🪄{position:relative}
+.🪄::before,.🪄::after{content:"✦";position:absolute;pointer-events:none;font-size:.6em;line-height:1;color:#ffc400;-webkit-text-fill-color:#ffc400;text-shadow:2.2em 1.6em 0 #ff2bd6,-1em 2.4em 0 #00e5ff;animation:ec-twinkle calc(1.4s * var(--ec-speed, 1)) ease-in-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.🪄::before{top:-.6em;left:-.4em}
+.🪄::after{content:"✧";top:-.2em;right:-.6em;color:#7a5cff;-webkit-text-fill-color:#7a5cff;text-shadow:-2.4em 2em 0 #ffc400,-.6em 2.6em 0 #ff2bd6;animation-delay:calc(var(--ec-delay, 0s) + .7s * var(--ec-speed, 1))}
+@keyframes ec-twinkle{0%,100%{opacity:0;scale:.3;rotate:0deg}50%{opacity:1;scale:1.15;rotate:90deg}}
+/* 🎉 confetti */
+.🎉{position:relative}
+.🎉::before,.🎉::after{content:"▪";position:absolute;top:30%;left:50%;pointer-events:none;font-size:.7em;line-height:1;color:#ff2bd6;-webkit-text-fill-color:#ff2bd6;text-shadow:.6em -.4em 0 #ffd23f,-.7em -.3em 0 #00e5ff,.3em -.9em 0 #7dff3c,-.4em -1em 0 #7a5cff,1em .1em 0 #ff5a1f,-1em .2em 0 #ffd23f;animation:ec-confetti-l calc(1.6s * var(--ec-speed, 1)) cubic-bezier(.2,.7,.4,1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.🎉::after{content:"●";font-size:.45em;color:#00e5ff;-webkit-text-fill-color:#00e5ff;text-shadow:-1em -.6em 0 #ff2bd6,1.2em -.5em 0 #ffd23f,-.5em -1.5em 0 #7dff3c,.6em -1.6em 0 #7a5cff,1.8em .2em 0 #ff2bd6,-1.8em .1em 0 #ffd23f;animation-name:ec-confetti-r}
+@keyframes ec-confetti-l{0%{translate:0 0;scale:.2;opacity:0;rotate:0deg}15%{opacity:1}100%{translate:-1.8em -2.4em;scale:1.6;opacity:0;rotate:-120deg}}
+@keyframes ec-confetti-r{0%{translate:0 0;scale:.2;opacity:0;rotate:0deg}15%{opacity:1}100%{translate:1.6em -2.6em;scale:1.8;opacity:0;rotate:140deg}}
+/* ❤️ hearts */
+.❤️{position:relative}
+.❤️::before,.❤️::after{content:"❤";position:absolute;bottom:60%;right:-.2em;pointer-events:none;font-size:.7em;line-height:1;color:#ff3d7f;-webkit-text-fill-color:#ff3d7f;animation:ec-heart calc(2s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.❤️::after{right:auto;left:10%;color:#ff7ab0;-webkit-text-fill-color:#ff7ab0;animation-delay:calc(var(--ec-delay, 0s) + 1s * var(--ec-speed, 1))}
+.❤{position:relative}
+.❤::before,.❤::after{content:"❤";position:absolute;bottom:60%;right:-.2em;pointer-events:none;font-size:.7em;line-height:1;color:#ff3d7f;-webkit-text-fill-color:#ff3d7f;animation:ec-heart calc(2s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.❤::after{right:auto;left:10%;color:#ff7ab0;-webkit-text-fill-color:#ff7ab0;animation-delay:calc(var(--ec-delay, 0s) + 1s * var(--ec-speed, 1))}
+@keyframes ec-heart{0%{translate:0 .6em;scale:.4;opacity:0}20%{opacity:1}50%{translate:.3em -.6em}100%{translate:-.2em -2em;scale:1.3;opacity:0}}
+/* 💸 money */
+.💸{position:relative}
+.💸::before,.💸::after{content:"💸";position:absolute;top:-1.2em;left:10%;pointer-events:none;font-size:.75em;line-height:1;-webkit-text-fill-color:initial;animation:ec-money calc(2.2s * var(--ec-speed, 1)) ease-in var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.💸::after{left:auto;right:5%;animation-delay:calc(var(--ec-delay, 0s) + 1.1s * var(--ec-speed, 1))}
+@keyframes ec-money{0%{translate:0 0;rotate:-20deg;opacity:0}15%{opacity:1}50%{rotate:15deg}100%{translate:.5em 3em;rotate:-10deg;opacity:0}}
+/* ❄️ snow */
+.❄️{position:relative;overflow:hidden}
+.❄️::before,.❄️::after{content:"❄ ❅ ❆ ❄ ❅ ❆ ❄";position:absolute;top:0;left:-.5em;right:-.5em;pointer-events:none;white-space:nowrap;overflow:hidden;letter-spacing:.6em;font-size:.6em;line-height:1;color:#ffffffd0;-webkit-text-fill-color:#ffffffd0;animation:ec-snow calc(3s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.❄️::after{content:"❅ ❆ ❄ ❅ ❆ ❄ ❅";left:.4em;animation-delay:calc(var(--ec-delay, 0s) - 1.5s * var(--ec-speed, 1))}
+.❄{position:relative;overflow:hidden}
+.❄::before,.❄::after{content:"❄ ❅ ❆ ❄ ❅ ❆ ❄";position:absolute;top:0;left:-.5em;right:-.5em;pointer-events:none;white-space:nowrap;overflow:hidden;letter-spacing:.6em;font-size:.6em;line-height:1;color:#ffffffd0;-webkit-text-fill-color:#ffffffd0;animation:ec-snow calc(3s * var(--ec-speed, 1)) linear var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.❄::after{content:"❅ ❆ ❄ ❅ ❆ ❄ ❅";left:.4em;animation-delay:calc(var(--ec-delay, 0s) - 1.5s * var(--ec-speed, 1))}
+@keyframes ec-snow{0%{translate:0 -1.5em;opacity:0}20%{opacity:1}100%{translate:.6em 6em;opacity:.2}}
+/* ☕ steam */
+.☕{position:relative}
+.☕::before,.☕::after{content:"~";position:absolute;bottom:90%;left:40%;pointer-events:none;font-size:1.1em;line-height:1;rotate:90deg;color:currentColor;-webkit-text-fill-color:currentColor;opacity:0;animation:ec-steam calc(2.2s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.☕::after{left:58%;animation-delay:calc(var(--ec-delay, 0s) + .9s * var(--ec-speed, 1))}
+@keyframes ec-steam{0%{translate:0 0;opacity:0}30%{opacity:.6}100%{translate:0 -.9em;opacity:0;scale:1.4}}
+/* 🤖 typing */
+.🤖::after{content:"▋";display:inline-block;margin-left:.08em;color:currentColor;-webkit-text-fill-color:currentColor;animation:ec-caret calc(1s * var(--ec-speed, 1)) steps(1) var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+@keyframes ec-caret{50%{opacity:0}}
+/* 🕶️ dealwithit */
+.🕶️{position:relative}
+.🕶️::after{content:"🕶️";position:absolute;left:50%;top:-1.05em;pointer-events:none;font-size:1em;line-height:1;-webkit-text-fill-color:initial;translate:-50% 0;animation:ec-shades calc(1.6s * var(--ec-speed, 1)) cubic-bezier(.5,0,.5,1) var(--ec-delay, 0s) var(--ec-iter, 1) var(--ec-dir, normal) both}
+.🕶{position:relative}
+.🕶::after{content:"🕶️";position:absolute;left:50%;top:-1.05em;pointer-events:none;font-size:1em;line-height:1;-webkit-text-fill-color:initial;translate:-50% 0;animation:ec-shades calc(1.6s * var(--ec-speed, 1)) cubic-bezier(.5,0,.5,1) var(--ec-delay, 0s) var(--ec-iter, 1) var(--ec-dir, normal) both}
+@keyframes ec-shades{0%{translate:-50% -3em;opacity:0}70%{translate:-50% 0;opacity:1}80%{translate:-50% -.15em}100%{translate:-50% 0;opacity:1}}
+/* 💯 stamp */
+.💯{position:relative}
+.💯::after{content:"💯";position:absolute;top:-.7em;right:-.9em;pointer-events:none;font-size:.9em;line-height:1;-webkit-text-fill-color:initial;rotate:-15deg;animation:ec-stamp calc(0.5s * var(--ec-speed, 1)) cubic-bezier(.3,1.5,.6,1) var(--ec-delay, 0s) var(--ec-iter, 1) var(--ec-dir, normal) both}
+@keyframes ec-stamp{from{scale:4;opacity:0}to{scale:1;opacity:1}}
+/* 💤 sleep */
+.💤{position:relative}
+.💤::before,.💤::after{content:"z";position:absolute;bottom:70%;right:-.4em;pointer-events:none;font-weight:700;font-size:.6em;line-height:1;color:#7a5cff;-webkit-text-fill-color:#7a5cff;opacity:0;animation:ec-zzz calc(2.4s * var(--ec-speed, 1)) ease-out var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.💤::after{content:"Z";font-size:.8em;animation-delay:calc(var(--ec-delay, 0s) + 1.2s * var(--ec-speed, 1))}
+@keyframes ec-zzz{0%{translate:0 0;opacity:0}20%{opacity:1}100%{translate:1em -1.6em;opacity:0;rotate:20deg}}
+/* 🫧 bubbles */
+.🫧{position:relative}
+.🫧::before,.🫧::after{content:"○";position:absolute;bottom:0;left:20%;pointer-events:none;font-size:.5em;line-height:1;color:#bfeaff;-webkit-text-fill-color:#bfeaff;text-shadow:1.6em .8em 0 #bfeaff,3.4em .3em 0 #bfeaff;opacity:0;animation:ec-bubble calc(2.6s * var(--ec-speed, 1)) ease-in var(--ec-delay, 0s) var(--ec-iter, infinite) var(--ec-dir, normal) both}
+.🫧::after{left:35%;font-size:.35em;animation-delay:calc(var(--ec-delay, 0s) + 1.3s * var(--ec-speed, 1))}
+@keyframes ec-bubble{0%{translate:0 0;opacity:0}20%{opacity:1}100%{translate:.3em -4em;opacity:0}}
+
+/* ── Utilities ── */
+/* 🤡 comic */
+.🤡{font-family:"Comic Sans MS","Comic Sans","Chalkboard SE","Comic Neue",cursive}
+/* 📢 shout */
+.📢{text-transform:uppercase;font-weight:900;letter-spacing:.06em}
+/* 🙈 spoiler */
+.🙈{filter:blur(.3em);transition:filter .3s;cursor:help}
+.🙈:hover,.🙈:focus-visible{filter:none}
+/* 🧊 frozen */
+.🧊{filter:saturate(.4) brightness(1.15) hue-rotate(170deg)}
+.🧊,.🧊::before,.🧊::after{animation-play-state:paused}
+/* 🐛 bug */
+.🐛{margin-left:1px}
+/* 🗿 moai */
+.🗿{/* 🗿 */}
+/* 🧼 reset */
+.🧼,.🧼::before,.🧼::after{animation:none!important}
+
+/* ── Modifiers (last, so they win the cascade) ── */
+/* 🐌 speed-x4 */
+.🐌{--ec-speed:4}
+/* 🐢 speed-x2 */
+.🐢{--ec-speed:2}
+/* 🐇 speed-half */
+.🐇{--ec-speed:.5}
+/* 🏎️ speed-quarter */
+.🏎️,.🏎{--ec-speed:.25}
+/* 1️⃣ once */
+.\31 ️⃣,.\31 ⃣{--ec-iter:1}
+/* 3️⃣ thrice */
+.\33 ️⃣,.\33 ⃣{--ec-iter:3}
+/* ♾️ infinite */
+.♾️,.♾{--ec-iter:infinite}
+/* ⏪ reverse */
+.⏪{--ec-dir:reverse}
+/* 🔁 alternate */
+.🔁{--ec-dir:alternate}
+/* ⏳ delay */
+.⏳{--ec-delay:.5s}
+/* ⌛ delay-long */
+.⌛{--ec-delay:1.5s}
+/* ⏸️ paused */
+.⏸️,.⏸️::before,.⏸️::after{animation-play-state:paused}
+.⏸,.⏸::before,.⏸::after{animation-play-state:paused}
+/* 👆 hover */
+.👆:not(:hover):not(:focus-visible),.👆:not(:hover):not(:focus-visible)::before,.👆:not(:hover):not(:focus-visible)::after{animation-play-state:paused}
+
+/* ── The only serious part of this library: we respect prefers-reduced-motion ── */
+@media (prefers-reduced-motion:reduce){
+.🔄,.🎡,.🙃,.🕺,.🔔,.🥴,.🧭,.🌀,.🪃,.⏰,.🏀,.🎈,.🫨,.🦘,.🥶,.🛸,.🐍,.🚀,.📈,.📉,.🪂,.🏓,.🧲,.🪀,.💓,.🫁,.🍮,.💥,.🐡,.🤏,.🔍,.🫠,.🌈,.💡,.😵‍💫,.🔦,.🌚,.☢️,.☢,.🌫️,.🌫,.🧪,.📸,.🥵,.🪦,.👻,.🫥,.🕯️,.🕯,.👾,.🌊,.🍝,.🪙,.🥞,.🔥,.🚨,.🪩,.📟,.⚡,.✏️,.✏,.🖍️,.🖍,.🦄,.✨,.🦓,.🪄::before,.🪄::after,.🎉::before,.🎉::after,.❤️::before,.❤️::after,.❤::before,.❤::after,.💸::before,.💸::after,.❄️::before,.❄️::after,.❄::before,.❄::after,.☕::before,.☕::after,.🤖::before,.🤖::after,.🕶️::before,.🕶️::after,.🕶::before,.🕶::after,.💯::before,.💯::after,.💤::before,.💤::after,.🫧::before,.🫧::after{animation:none!important}
+.🖍️,.🖍{background-size:100% 70%}
+}
