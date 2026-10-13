@@ -105,9 +105,9 @@ p { margin: 0; }
 /* Hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(2rem, 5vw, 4rem); }
 @media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); } }
-.hero-copy { display: grid; gap: 1.4rem; min-width: 0; }
+.hero-copy { display: grid; gap: 1.4rem; min-width: 0; container-type: inline-size; }
 .eyebrow { font: 600 var(--step--1) var(--f-mono); letter-spacing: .02em; color: var(--ink-soft); text-transform: uppercase; }
-.wordmark { font-size: var(--step-4); font-weight: 800; letter-spacing: -.05em; line-height: .95; display: flex; align-items: flex-end; flex-wrap: nowrap; gap: .04em; padding-top: .3em; }
+.wordmark { font-size: min(var(--step-4), 18.5cqw); font-weight: 800; letter-spacing: -.05em; line-height: .95; display: flex; align-items: flex-end; flex-wrap: nowrap; gap: .04em; padding-top: .3em; }
 .wordmark .kc { font-size: .78em; letter-spacing: 0; margin-left: .05em; color: var(--ultra); }
 .wordmark .kc:nth-of-type(2) { color: var(--pink); }
 .wordmark .kc:nth-of-type(3) { color: var(--mint); }
@@ -280,7 +280,7 @@ input[type="text"], input[type="search"] { font: 500 1rem var(--f-body); padding
 /* Footer */
 .foot { padding-block: clamp(4rem, 10vw, 7rem) 3rem; display: grid; gap: .6rem; justify-items: center; text-align: center; }
 .foot-big { font: 800 clamp(3rem, 12vw, 8rem)/1 var(--f-display); letter-spacing: -.05em; }
-.foot-big span { display: inline-block; padding: .04em .1em .14em 0; }
+.foot-big span { display: inline-block; padding: .04em .2em .14em .02em; margin-right: -.1em; }
 
 /* Toast */
 .toast { position: fixed; left: 50%; bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); translate: -50% 150%; background: var(--ink); color: var(--paper); padding: .7em 1.2em; border-radius: 999px; font-weight: 600; transition: translate .25s, visibility .25s; visibility: hidden; z-index: 60; pointer-events: none; max-width: calc(100% - 32px); }

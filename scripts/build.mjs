@@ -1,5 +1,6 @@
 // Builds dist/emoji.css, dist/emoji.min.css and the catalog data for the website.
 // Zero dependencies: `node scripts/build.mjs`.
+import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -107,3 +108,12 @@ writeFileSync(join(root, 'site/catalog.js'), `window.EMOJICSS=${JSON.stringify(c
 
 const kb = (s) => (Buffer.byteLength(s) / 1024).toFixed(1) + ' kB';
 console.log(`EmojiCSS v${pkg.version}: ${emojis.length} classes · emoji.css ${kb(css)} · emoji.min.css ${kb(minify(css))}`);
+
+// Cache-busting: stamp each asset URL in index.html with a hash of its contents,
+// so browsers never mix a fresh page with a stale script or stylesheet.
+const hashOf = (file) => createHash('md5').update(readFileSync(join(root, file))).digest('hex').slice(0, 8);
+let page = readFileSync(join(root, 'index.html'), 'utf8');
+for (const file of ['dist/emoji.min.css', 'site/style.css', 'site/catalog.js', 'site/app.js']) {
+  page = page.replace(new RegExp(`(["'])${file.replace('.', '\\.')}(\\?v=[0-9a-f]+)?\\1`, 'g'), `$1${file}?v=${hashOf(file)}$1`);
+}
+writeFileSync(join(root, 'index.html'), page);
