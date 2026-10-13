@@ -71,18 +71,18 @@ Each slot is a custom property registered with `@property { inherits: false }`, 
 | ⏸️ | Pause |
 | 👆 | Animate only on hover or focus |
 
-Speed, repeat and delay modifiers are inherited variables: put them on a container and they affect everything inside.
+Put a modifier on the same element as the animation, or on a container to affect everything inside: speed (🐌 🐢 🐇 🏎️), repeat (1️⃣ 3️⃣ ♾️), direction (⏪ 🔁) and delay (⏳ ⌛). ⏸️ and 👆 apply to the element itself.
 
 ## Details
 
 - Every emoji works with and without the U+FE0F variation selector (`✏️` and `✏`).
-- Movement classes set `display: inline-block` on `span`, `a`, `em`… so transforms actually apply.
+- Classes that animate rotation, movement, scale, opacity or transform set `display: inline-block` on inline tags (`span`, `a`, `em`, `img`…) so the animation actually applies. Other inline tags need `display: inline-block` added by you.
 - Respects `prefers-reduced-motion`: if the system asks for less motion, everything stops.
 - Browsers: current versions of Chrome, Edge, Safari and Firefox.
 
 ## Development
 
-Everything comes from [`src/emojis.mjs`](src/emojis.mjs). To regenerate `dist/` and the website data:
+Everything comes from [`src/emojis.mjs`](src/emojis.mjs). To regenerate `dist/`, the website data and the cache-busting hashes in `index.html`:
 
 ```bash
 npm run build   # or: node scripts/build.mjs
@@ -90,7 +90,7 @@ npm run build   # or: node scripts/build.mjs
 
 To add an emoji: one entry in `src/emojis.mjs`, an `npm run build`, and a PR. Mandatory requirement: a sarcastic description.
 
-The website (`index.html` + `site/`) is served as-is from GitHub Pages, no build needed.
+The website (`index.html` + `site/`) is served as-is from GitHub Pages. Run `npm run build` before committing site changes so the asset hashes in `index.html` stay current.
 
 ## License
 
