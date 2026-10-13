@@ -73,25 +73,6 @@ Each slot is a custom property registered with `@property { inherits: false }`, 
 
 Speed, repeat and delay modifiers are inherited variables: put them on a container and they affect everything inside.
 
-## Custom emojis
-
-Any element can wear emoji classes, including an `<img>` or a PNG used as a CSS background, and you can define your own emoji classes with their own animation:
-
-```css
-/* A PNG used as an emoji */
-.cupcake { display: inline-block; width: 3rem; height: 3rem; background: url(cupcake.png) center / contain no-repeat; }
-
-/* Your own emoji class, with your own animation */
-.🧁 { animation: wiggle 1s ease-in-out infinite; }
-@keyframes wiggle { 50% { rotate: 14deg; } }
-```
-
-```html
-<img src="cupcake.png" width="64" alt="" class="🏀 💓">
-<span class="cupcake 🔄 🌈"></span>
-<span class="🧁">🧁</span>
-```
-
 ## Details
 
 - Every emoji works with and without the U+FE0F variation selector (`✏️` and `✏`).

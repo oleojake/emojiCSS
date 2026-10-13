@@ -193,28 +193,10 @@
       html: `<h3>Powered by <span class="🦄 🪄">AI</span></h3>
 <p class="🤖">Generating a convincing answer</p>`,
     },
-    {
-      title: 'Custom emojis: bring your own PNG',
-      note: 'Any element can wear emoji classes: an <img>, a PNG used as a background, or your own emoji class.',
-      css: `/* A PNG used as an emoji */
-.cupcake {
-  display: inline-block; width: 3rem; height: 3rem;
-  background: url(site/example-emoji.png) center / contain no-repeat;
-  image-rendering: pixelated;
-}
-
-/* Your own emoji class, with your own animation */
-.🧁 { animation: wiggle 1s ease-in-out infinite; }
-@keyframes wiggle { 50% { rotate: 14deg; } }`,
-      html: `<img src="site/example-emoji.png" width="64" height="64" alt="" class="🏀 💓">
-<span class="cupcake 🔄 🌈"></span>
-<span class="🧁">🧁</span>`,
-    },
   ];
   $('#examples').innerHTML = EXAMPLES.map((x, i) => `
     <article class="example">
       <div class="example-head"><h3>${x.title}</h3><p>${esc(x.note)}</p></div>
-      ${x.css ? `<div class="example-css snippet"><pre class="code code-dark" tabindex="0"><code id="ex-${i}-css">${esc(x.css)}</code></pre><button class="copy" type="button" data-copy="#ex-${i}-css">Copy</button></div>` : ''}
       <div class="example-code">
         <label class="visually-hidden" for="ex-${i}">Example code: ${x.title}</label>
         <textarea id="ex-${i}" spellcheck="false" autocapitalize="off" autocomplete="off">${esc(x.html)}</textarea>

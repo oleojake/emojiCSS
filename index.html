@@ -34,7 +34,7 @@
   <section class="hero wrap">
     <div class="hero-copy">
       <p class="eyebrow">v<span data-version>1.0.0</span> · <span data-count>92</span> classes · 0 dependencies · 100% unnecessary</p>
-      <h1 class="wordmark">Emoji<span class="wordmark-css">CSS</span></h1>
+      <h1 class="wordmark">Emoji<span class="kc 🎈">C</span><span class="kc 🎈 ⏳">S</span><span class="kc 🎈 ⌛">S</span></h1>
       <p class="lede">The <em>utility-first</em> framework that replaces <code>animate-spin</code> with <code>🔄</code>. Because readable code was <span class="✏️ 🐢">overrated</span> anyway.</p>
       <div class="compare" aria-label="Comparison">
         <div class="compare-row"><span class="tag tag-old">Before</span><code>&lt;div class="animate-spin hover:scale-110 motion-safe:animate-bounce"&gt;</code></div>
@@ -61,8 +61,10 @@
 
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Respects prefers-reduced-motion</span><span>✦</span>
-      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Respects prefers-reduced-motion</span><span>✦</span>
+      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Works on my machine</span><span>✦</span><span>Respects reduced-motion settings (for real)</span><span>✦</span><span>Now with 100% more emojis</span><span>✦</span><span>Linter not included</span><span>✦</span>
+      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Works on my machine</span><span>✦</span><span>Respects reduced-motion settings (for real)</span><span>✦</span><span>Now with 100% more emojis</span><span>✦</span><span>Linter not included</span><span>✦</span>
+      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Works on my machine</span><span>✦</span><span>Respects reduced-motion settings (for real)</span><span>✦</span><span>Now with 100% more emojis</span><span>✦</span><span>Linter not included</span><span>✦</span>
+      <span>0 dependencies</span><span>✦</span><span>92 emoji classes</span><span>✦</span><span>No build step</span><span>✦</span><span>Works alongside Tailwind</span><span>✦</span><span>Works on my machine</span><span>✦</span><span>Respects reduced-motion settings (for real)</span><span>✦</span><span>Now with 100% more emojis</span><span>✦</span><span>Linter not included</span><span>✦</span>
     </div>
   </div>
 
@@ -72,7 +74,7 @@
       <h2>How it works</h2>
     </div>
     <ol class="steps">
-      <li><span class="step-n">1</span><h3>Paste a <code>&lt;link&gt;</code></h3><p>One stylesheet. No build step, no PostCSS, no 200-line config file.</p></li>
+      <li><span class="step-n">1</span><h3>Paste a <code>&lt;link&gt;</code></h3><p>One stylesheet. No build step, no PostCSS, no 200-line config file, no regrets.</p></li>
       <li><span class="step-n">2</span><h3>Put an emoji in <code>class</code></h3><p>Use it like a Tailwind utility. <code>class="🔄"</code> makes the element spin.</p></li>
       <li><span class="step-n">3</span><h3>Stack as many as you like</h3><p><code>class="🔄 🌈"</code> spins and changes color at the same time.</p></li>
     </ol>
@@ -184,9 +186,8 @@
       <details><summary>Which browsers support it?</summary><p>Current versions of Chrome, Edge, Safari and Firefox. Animation composition relies on <code>@property</code> and the individual <code>rotate</code>, <code>translate</code> and <code>scale</code> properties. Internet Explorer? <span class="🪦">🪦</span></p></details>
       <details><summary>Can I combine several classes?</summary><p>Yes. Classes from different families (rotation, movement, scale…) add up. Within the same family, whichever comes later in the stylesheet wins, like any other CSS. Special effects use <code>::before</code> and <code>::after</code>, so you get one per element.</p></details>
       <details><summary>Why won't my &lt;span&gt; move?</summary><p>Transforms don't apply to <em>inline</em> elements. EmojiCSS already sets <code>display: inline-block</code> on <code>span</code>, <code>a</code>, <code>em</code> and friends when they carry a movement class. If you use another inline tag, add it yourself.</p></details>
-      <details><summary>Is it accessible?</summary><p>We respect <code>prefers-reduced-motion</code>: if your system asks for less motion, everything stays still. It's the only serious part of the project. And please, don't animate text people actually need to read.</p></details>
+      <details><summary>Is it accessible?</summary><p>This answer is not a joke: EmojiCSS respects <code>prefers-reduced-motion</code>. If the visitor's system has "reduce motion" turned on, every animation stops. Still, don't animate text people need to read.</p></details>
       <details><summary>Is it production-ready?</summary><p>Define "production".</p></details>
-      <details><summary>Can I use my own emojis?</summary><p>Yes. Any element can wear emoji classes, including an <code>&lt;img&gt;</code> or a PNG used as a CSS background, and you can define your own emoji classes with their own animation. There's a live example under <a href="#examples-section">Real-world examples</a>. To add an emoji to the library itself, add it to <code>src/emojis.mjs</code>, run <code>npm run build</code> and open a PR.</p></details>
     </div>
   </section>
 </main>
